@@ -1,6 +1,6 @@
 # Getting started with Docker
 
-Ideally, we should be creating ML applications that produce preditable behavior, regardless of where they are deployed. [Docker](https://www.docker.com/) can be utilized to accomplish this goal. 
+Ideally, we should be creating ML applications that produce predictable behavior, regardless of where they are deployed. [Docker](https://www.docker.com/) can be utilized to accomplish this goal. 
 
 The below sections help you understand why Docker is useful in this context and some of the jargon associated with Docker. It will also walk you through installation and basic use of Docker:
 
@@ -73,22 +73,22 @@ To install Docker (the community edition), following the appropriate guide [here
 ```sh
 $ docker version
 Client:
- Version:	17.12.0-ce
- API version:	1.35
- Go version:	go1.9.2
- Git commit:	c97c6d6
- Built:	Wed Dec 27 20:03:51 2017
- OS/Arch:	darwin/amd64
+ Version:   17.12.0-ce
+ API version:   1.35
+ Go version:    go1.9.2
+ Git commit:    c97c6d6
+ Built: Wed Dec 27 20:03:51 2017
+ OS/Arch:   darwin/amd64
 
 Server:
  Engine:
-  Version:	17.12.0-ce
-  API version:	1.35 (minimum version 1.12)
-  Go version:	go1.9.2
-  Git commit:	c97c6d6
-  Built:	Wed Dec 27 20:12:29 2017
-  OS/Arch:	linux/amd64
-  Experimental:	true
+  Version:  17.12.0-ce
+  API version:  1.35 (minimum version 1.12)
+  Go version:   go1.9.2
+  Git commit:   c97c6d6
+  Built:    Wed Dec 27 20:12:29 2017
+  OS/Arch:  linux/amd64
+  Experimental: true
 ```
 
 **Note** - in some cases, you may need to run any `docker ...` commands as `sudo`. This should be fine for this CodeLab, but, if you want to be able to run without `sudo`, you could follow [this guide](https://docs.docker.com/install/linux/linux-postinstall/). 
@@ -149,6 +149,8 @@ There are quite a variety of options that you can specify when running your Dock
 To stop this running container, you can run `docker rm -f <container ID>` from the terminal where you ran `docker ps`. Or you should be able to close it via `CTRL + C` in the terminal where you ran the `docker run` command. 
 
 **Note** - You could recreate this process on any machine in the cloud or on premise, as long as that machine has Docker installed. You wouldn't have to install the right version of Jupyter, ipython, etc. You just need to `docker run`. In fact, you can `docker run` TensorFlow, PyTorch, R, ggplot, Postgres, MongoDB, Spark, or whatever you want, without messing with any dependencies. That's awesome! Hopefully, you are beginning to see the power and flexibility of containers. 
+
+**Note** - One other note: If you create a new notebook, you'll notice if you try to import something that requires a dependency (numpy or pandas for example) it won't be found. Those dependencies haven't been added yet. We'll go through how to install dependencies into your docker container in the next part of the codelab. 
 
 ## Resources
 
