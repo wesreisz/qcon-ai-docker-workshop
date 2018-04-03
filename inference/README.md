@@ -94,7 +94,7 @@ $ python api.py
 The `api.py` looks for an environmental variable `MODEL_FILE`, which should be set to location of the serialized model that was the output of our model training container. Once, that code is running, it will serve predictions on port 5000. For example, you could visit the following address in a browser (or via curl, postman, etc.) to get a prediction response in the form of JSON (assuming you are running the code locally):
 
 ```
-http://localhost:5000/prediction\?slength\=1.5\&swidth\=0.7\&plength\=1.3\&pwidth\=0.3
+http://localhost:5000/prediction?slength=1.5&swidth=0.7&plength=1.3&pwidth=0.3
 ``` 
 
 When we run the code in the container, we will need to map the port 5000 inside of the container to a port outside of the container (such that we can use the service), map a volume with the `model.pkl` file into the container, and set the environmental variable `MODEL_FILE` in the container to specify the model file. Thus, to start the prediction service, run: 
